@@ -1,0 +1,14 @@
+#.gitignore
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+## vim and emacs
+*~
+*.sw[pon]
+*.bak
+*.old
+
