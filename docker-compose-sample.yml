@@ -1,0 +1,10 @@
+# docker-compose.yml
+
+subsonic:
+  build: .
+  ports:
+  - 40000:8080
+  volumes:
+  - /local/var/playlists:/var/playlists
+  - /local/var/music:/var/music
+  - /local/var/subsonic:/var/subsonic
