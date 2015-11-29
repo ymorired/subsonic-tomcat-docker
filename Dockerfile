@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 # INSTALL TOMCAT
 ENV TOMCAT_MAJOR_VERSION 7
-ENV TOMCAT_MINOR_VERSION 7.0.57
+ENV TOMCAT_MINOR_VERSION 7.0.65
 ENV CATALINA_HOME /tomcat
 
 RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
@@ -23,12 +23,12 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION
     mv apache-tomcat* tomcat
 
 RUN rm -rf /tomcat/webapps/* && \
-    wget -q -O /tomcat/webapps/ROOT.war https://github.com/EugeneKay/subsonic/releases/download/v5.0-kang/subsonic-v5.0-kang.war && \
+    wget -q -O /tomcat/webapps/ROOT.war https://github.com/EugeneKay/subsonic/releases/download/v5.3-kang/subsonic-v5.3-kang.war && \
     mkdir -p /var/music /var/playlists /var/subsonic
 
-RUN locale-gen en_US.UTF-8  
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 EXPOSE 8080
